@@ -1,14 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
+
 <body>
   <div id="root">
-    My name is Limsohee what is your name?
+
+    <input type="number" id="row"  min="1" max="5">
+    <input type="number" id="column"  min="1" max="2">
+    <input type="button" value="submit" onclick="submit()">
   </div>
+  <div id="result">
+    <div id="rowValue"></div>
+    <div id="columnValue"></div>
+    <!-- ? 자바스크립트로 생성한 html은 값이 없다고 나옴 innerHTML로 요소를 생성해도 동일 -->
+  </div>
+  <script>
+    const root = document.getElementById("root")
+    const row = document.getElementById("row")
+    const column = document.getElementById("column")
+    const rowValue = document.getElementById("rowValue")
+    const columnValue = document.getElementById("columnValue")
+    const result = document.getElementById("result")
+    
+    function submit() {
+      rowValue.textContent = row.value
+      columnValue.textContent = column.value
+    }
+    
+  </script>
 </body>
+
 </html>
